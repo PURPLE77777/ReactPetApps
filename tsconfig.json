@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"module": "es6",
+		"strict": true,
+		// "skipLibCheck": true,
+		// "removeComments": true,
+		"allowSyntheticDefaultImports": true,
+		// "target": "es5",
+		// "checkJs": true,
+		"jsx": "react",
+		// "sourceMap": true,
+		"allowJs": true,
+		"moduleResolution": "node",
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	},
+	"include": ["src"]
+}
