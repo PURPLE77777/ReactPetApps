@@ -1,0 +1,18 @@
+{
+	"user": "PURPLE",
+	"role": "superadmin",
+	"projects": [
+		{
+			"id": 1,
+			"name": "hdrezka"
+		},
+		{
+			"id": 2,
+			"name": "vk"
+		},
+		{
+			"id": 3,
+			"name": "twitch"
+		}
+	]
+}
