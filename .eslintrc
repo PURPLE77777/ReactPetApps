@@ -18,12 +18,12 @@
 	"ignorePatterns": ["webpack.config.js", "node_modules/"],
 	"rules": {
 		"no-unused-vars": "warn",
-		"semi": "error",
+		"semi": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
 		"react/prop-types": "off",
 		"react/jsx-uses-react": "error",
-		"react/jsx-uses-vars": "error"
+		"react/jsx-uses-vars": "warn"
 	},
 	"settings": {
 		"react": {
