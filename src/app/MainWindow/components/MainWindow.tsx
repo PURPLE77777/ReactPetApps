@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import '../scss/mainWindow';
-import bg from '../img/main_backgd_1.jpg';
+import bg1 from '../img/main_backgd_1.jpg';
+import bg2 from '../img/main_backgd_2.jpg';
+import bg3 from '../img/main_backgd_3.jpg';
+import bg4 from '../img/main_backgd_4.jpg';
+import bg5 from '../img/main_backgd_5.jpg';
+import bg6 from '../img/main_backgd_6.jpg';
+import bg7 from '../img/main_backgd_7.jpg';
 
-interface MainWindowProps {
-	urlBgImg: string;
-}
+export default function MainWindow() {
+	const arrBg = [bg1, bg2, bg3, bg4, bg5, bg6, bg7];
+	const randomImg = arrBg[Math.round(Math.random() * (arrBg.length - 1))];
+	const styleMainConfig = { backgroundImage: `url(${randomImg})` };
 
-export default function MainWindow({ urlBgImg }: MainWindowProps) {
-	const styleMainConfig = { backgroundImage: 'url("../img/main_backgd_1.jpg")' };
-
-	return <div id='mainWindow'>MainWindow</div>;
+	return (
+		<div
+			id='mainWindow'
+			style={styleMainConfig}>
+			MainWindow
+		</div>
+	);
 }
