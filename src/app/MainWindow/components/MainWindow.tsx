@@ -1,23 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import '../scss/mainWindow';
-import bg1 from '../img/main_backgd_1.jpg';
-import bg2 from '../img/main_backgd_2.jpg';
-import bg3 from '../img/main_backgd_3.jpg';
-import bg4 from '../img/main_backgd_4.jpg';
-import bg5 from '../img/main_backgd_5.jpg';
-import bg6 from '../img/main_backgd_6.jpg';
-import bg7 from '../img/main_backgd_7.jpg';
+import mainBgs from '../dataset/mainBgs';
+import AppsPreview from './AppsPreview';
+import userData from '../dataset/users.json';
+
+interface Project {
+	id: number;
+	name: string;
+	imgPreview: string;
+}
+
+interface User {
+	id: number;
+	user: string;
+	role: string;
+	projects: Project[];
+}
 
 export default function MainWindow() {
-	const arrBg = [bg1, bg2, bg3, bg4, bg5, bg6, bg7];
-	const randomImg = arrBg[Math.round(Math.random() * (arrBg.length - 1))];
-	const styleMainConfig = { backgroundImage: `url(${randomImg})` };
+	const [user, setUser] = useState<User | null>(null);
+
+	const randomBgImg = mainBgs[Math.round(Math.random() * (mainBgs.length - 1))];
+	const styleMainConfig = { backgroundImage: `url(${randomBgImg})` };
+
+	useEffect(() => {
+		setUser(userData);
+	}, []);
+
+	console.log(user);
 
 	return (
 		<div
 			id='mainWindow'
 			style={styleMainConfig}>
-			MainWindow
+			<AppsPreview />
 		</div>
 	);
 }

@@ -1,0 +1,24 @@
+.app-preview_container {
+	width: 100%;
+	color: white;
+	display: flex;
+	.app-preview_wrap {
+		display: flex;
+		flex-flow: wrap row;
+		width: 75%;
+		margin: 20px auto;
+		justify-content: center;
+		.app {
+			width: 200px;
+			height: 120px;
+			margin: 10px;
+			border-radius: 20px;
+			cursor: pointer;
+			background-color: rgb(255, 255, 255, 0.3);
+			transition: all linear 0.2s;
+			&:hover {
+				background-color: rgb(255, 255, 255, 0.6);
+			}
+		}
+	}
+}
