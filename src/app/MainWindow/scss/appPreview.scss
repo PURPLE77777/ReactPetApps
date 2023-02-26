@@ -1,0 +1,52 @@
+.app-preview_container {
+	width: 100%;
+	color: white;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	.app-preview_wrap {
+		display: flex;
+		flex-flow: wrap row;
+		width: 75%;
+		margin: 20px auto;
+		justify-content: center;
+		position: relative;
+		.no-apps_message {
+			position: absolute;
+			top: -35%;
+			width: fit-content;
+			margin: 0px;
+			text-align: center;
+			user-select: none;
+			color: darkviolet;
+			border-radius: 10px;
+			padding: 5px;
+			background-color: rgba(255, 255, 255, 0.7);
+			box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+		}
+		.app {
+			width: 200px;
+			height: 120px;
+			margin: 10px;
+			border-radius: 20px;
+			background-color: rgb(255, 255, 255, 0.3);
+			transition: all linear 0.2s;
+			overflow: hidden;
+			.app_inner {
+				width: inherit;
+				height: inherit;
+				border-radius: inherit;
+				background-repeat: no-repeat;
+				background-position: center;
+				cursor: pointer;
+				transition: inherit;
+			}
+			&:hover {
+				box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.5);
+				.app_inner {
+					transform: scale(1.1, 1.1);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"id": 1,
+	"user": "PURPLE",
+	"role": "superadmin",
+	"projects": [
+		{
+			"id": 1,
+			"name": "HDRezka",
+			"imgPreview": "hdrezka.jpg"
+		},
+		{
+			"id": 2,
+			"name": "VK",
+			"imgPreview": "vk.png"
+		},
+		{
+			"id": 3,
+			"name": "Twitch",
+			"imgPreview": "twitch.jpg"
+		},
+		{
+			"id": 4,
+			"name": "YouTube",
+			"imgPreview": "youtube.jpg"
+		},
+		{
+			"id": 5,
+			"name": "Some",
+			"imgPreview": ""
+		},
+		{
+			"id": 6,
+			"name": "Some",
+			"imgPreview": ""
+		}
+	]
+}
