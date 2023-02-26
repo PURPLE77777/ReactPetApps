@@ -6,32 +6,38 @@
 		{
 			"id": 1,
 			"name": "HDRezka",
-			"imgPreview": "hdrezka.jpg"
+			"imgPreview": "hdrezka.jpg",
+			"url": "hdrezka"
 		},
 		{
 			"id": 2,
 			"name": "VK",
-			"imgPreview": "vk.png"
+			"imgPreview": "vk.png",
+			"url": ""
 		},
 		{
 			"id": 3,
 			"name": "Twitch",
-			"imgPreview": "twitch.jpg"
+			"imgPreview": "twitch.jpg",
+			"url": ""
 		},
 		{
 			"id": 4,
 			"name": "YouTube",
-			"imgPreview": "youtube.jpg"
+			"imgPreview": "youtube.jpg",
+			"url": ""
 		},
 		{
 			"id": 5,
 			"name": "Some",
-			"imgPreview": ""
+			"imgPreview": "",
+			"url": ""
 		},
 		{
 			"id": 6,
 			"name": "Some",
-			"imgPreview": ""
+			"imgPreview": "",
+			"url": ""
 		}
 	]
 }

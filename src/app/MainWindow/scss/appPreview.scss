@@ -33,6 +33,7 @@
 			transition: all linear 0.2s;
 			overflow: hidden;
 			.app_inner {
+				display: block;
 				width: inherit;
 				height: inherit;
 				border-radius: inherit;

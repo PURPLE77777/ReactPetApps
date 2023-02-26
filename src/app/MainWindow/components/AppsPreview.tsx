@@ -1,15 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../scss/appPreview.scss';
-
-interface Project {
-	id: number;
-	name: string;
-	imgPreview: string;
-}
-
-interface AppsPreviewProps {
-	projects?: Project[] | null;
-}
+import { AppsPreviewProps } from './interfaces';
 
 export default function AppsPreview({ projects }: AppsPreviewProps) {
 	return (
@@ -22,15 +14,30 @@ export default function AppsPreview({ projects }: AppsPreviewProps) {
 								<div
 									key={`app-${project.id}`}
 									className='app'>
-									<div
-										className='app_inner'
-										style={{
-											backgroundImage: project.imgPreview
-												? `url(${require('../img/' + project.imgPreview)})`
-												: `url(${require('../img/cloud.png')})`,
-											backgroundSize: project.imgPreview ? 'cover' : 'contain'
-										}}
-									/>
+									{project.url ? (
+										<Link
+											to={project.url}
+											className='app_inner'
+											style={{
+												backgroundImage: project.imgPreview
+													? `url(${require('../img/' + project.imgPreview)})`
+													: `url(${require('../img/cloud.png')})`,
+												backgroundSize: project.imgPreview ? 'cover' : 'contain'
+											}}
+										/>
+									) : (
+										// remove later...
+										<div
+											className='app_inner'
+											style={{
+												backgroundImage: project.imgPreview
+													? `url(${require('../img/' + project.imgPreview)})`
+													: `url(${require('../img/cloud.png')})`,
+												backgroundSize: project.imgPreview ? 'cover' : 'contain'
+											}}
+										/>
+										//////////////////////////
+									)}
 								</div>
 							);
 						})}

@@ -3,19 +3,7 @@ import '../scss/mainWindow';
 import mainBgs from '../dataset/mainBgs';
 import AppsPreview from './AppsPreview';
 import userData from '../dataset/users.json';
-
-interface Project {
-	id: number;
-	name: string;
-	imgPreview: string;
-}
-
-interface User {
-	id: number;
-	user: string;
-	role: string;
-	projects: Project[];
-}
+import { User } from './interfaces';
 
 export default function MainWindow() {
 	const [user, setUser] = useState<User | null>(null);

@@ -30,7 +30,7 @@ module.exports = {
 	devServer: {
 		static: path.resolve(__dirname, 'dist'),
 		hot: isDev,
-		open: true,
+		open: '/hdrezka',
 		// support HTML5 History API for react router
 		historyApiFallback: true,
 		client: {
@@ -39,17 +39,6 @@ module.exports = {
 				warnings: isDev
 			}
 		}
-		// listen to port 5000, change this to another port if another server
-		// is already listening on this port
-		// port: 5000,
-
-		// proxy requests to the JSON server REST service
-		// proxy: {
-		// 	'/widgets': {
-		// 		// server to proxy
-		// 		target: 'http://0.0.0.0:3010'
-		// 	}
-		// }
 	},
 	optimization: optimization(),
 	output: {
