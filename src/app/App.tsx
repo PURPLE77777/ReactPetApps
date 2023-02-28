@@ -2,7 +2,7 @@ import React from 'react';
 import MainWindow from './MainWindow/components/MainWindow';
 import './main';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HDRezkaMain from './HDRezka/HDRezkaMain';
+import HDRezkaMain from './HDRezka/components/HDRezkaMain';
 import ErrorPage from './common/components/ErrorPage';
 
 const router = createBrowserRouter([

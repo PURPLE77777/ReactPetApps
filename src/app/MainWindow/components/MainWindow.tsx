@@ -17,7 +17,7 @@ export default function MainWindow() {
 
 	return (
 		<div
-			id='mainWindow'
+			id='mainwindow-container'
 			style={styleMainConfig}>
 			<AppsPreview projects={user?.projects.length ? user.projects : null} />
 		</div>
