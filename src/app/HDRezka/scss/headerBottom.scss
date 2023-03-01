@@ -1,0 +1,11 @@
+.header_wrap-bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	background-color: #222d33;
+	.header-bottom {
+		max-width: 960px;
+	}
+}
