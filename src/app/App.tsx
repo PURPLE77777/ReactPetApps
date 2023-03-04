@@ -17,8 +17,8 @@ const router = createBrowserRouter([
 	}
 	// all incorrect urls will direct to MainWindow
 	// {
-	// path: '*',
-	// element: <MainWindow />
+	// 	path: '*',
+	// 	element: <MainWindow />
 	// }
 	//////////////////////
 ]);

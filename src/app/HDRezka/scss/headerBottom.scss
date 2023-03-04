@@ -1,13 +1,11 @@
 .header_wrap-bottom {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	width: 100%;
 	height: 45px;
 	background-color: #222d33;
 	.header-bottom {
 		max-width: 960px;
 		width: 100%;
+		margin: 0px auto;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
@@ -16,6 +14,10 @@
 		.header-bottom_menu {
 			display: flex;
 			flex-flow: row nowrap;
+			overflow: hidden;
+			width: 77%;
+			transition: width 0.2s linear;
+			background-color: #222d33;
 			.menu_item {
 				cursor: pointer;
 				font-size: 14px;
@@ -51,6 +53,8 @@
 			display: flex;
 			flex-flow: row nowrap;
 			align-items: center;
+			width: 23%;
+			transition: width 0.2s linear;
 			.search_img {
 				opacity: 0.5;
 				cursor: pointer;
@@ -77,6 +81,12 @@
 			.search_input__onfocused {
 				color: #fff;
 			}
+		}
+		.width-0-proc {
+			width: 0%;
+		}
+		.width-100-proc {
+			width: 100% !important;
 		}
 	}
 }

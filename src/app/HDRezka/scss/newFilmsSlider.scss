@@ -1,0 +1,53 @@
+.slider-wrap {
+	max-width: 960px;
+	width: 100%;
+	margin: 0px auto;
+	.slider-container {
+		display: flex;
+		flex-direction: column;
+		.chapters {
+			width: 100%;
+			color: #fff;
+			font-weight: bold;
+			font-size: 16px;
+			.chapter {
+				color: #2e859e;
+				border-bottom: 1px dotted #555;
+				cursor: pointer;
+				background-color: transparent;
+				font-weight: bold;
+				line-height: 16px;
+				padding: 0px;
+				&:hover {
+					border: none;
+				}
+			}
+			.chapter-show-all {
+				color: #555;
+				.chapter-show-all_span {
+					color: #2e859e;
+					border-bottom: 1px dotted #555;
+					cursor: pointer;
+					background-color: transparent;
+					font-weight: bold;
+					line-height: 16px;
+					padding: 0px;
+					&:hover {
+						border: none;
+					}
+				}
+				.selected-chapter {
+					color: #777;
+					border: none;
+				}
+			}
+			.selected-chapter {
+				color: #777;
+				border: none;
+			}
+		}
+		.slider {
+			width: 100%;
+		}
+	}
+}
