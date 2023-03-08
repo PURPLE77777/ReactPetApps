@@ -48,6 +48,26 @@
 		}
 		.slider {
 			width: 100%;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			.film-card {
+				display: block;
+				overflow: hidden;
+				margin: 0px 5px;
+				.film-pic {
+					padding: 2px;
+					border: 2px solid white;
+					.film-pic_img {
+					}
+				}
+				.short-desc {
+					.film-title {
+					}
+					.film-short-info {
+					}
+				}
+			}
 		}
 	}
 }
