@@ -14,7 +14,14 @@ export default function NewFilmsSlider() {
 
 	const sliderConfig = {
 		imgWidth: 92,
-		imgHeight: 140
+		imgHeight: 140,
+		sliderBtnWidth: 35,
+		sliderBtnHeight: 100
+	};
+	const btnSliderStyle = {
+		top: (sliderConfig.imgHeight + 8 - sliderConfig.sliderBtnHeight) / 2,
+		height: sliderConfig.sliderBtnHeight,
+		width: sliderConfig.sliderBtnWidth
 	};
 
 	useEffect(() => {
@@ -43,9 +50,9 @@ export default function NewFilmsSlider() {
 				<div className='short-desc'>
 					<p className='film-title'>{film.name}</p>
 					<p className='film-short-info'>
-						{film.date}
-						{', '}
-						{film.genre.join(', ')}
+						{new Date(film.date).getFullYear()}
+						{film.country.length > 1 ? ` - ..., ` : `, `}
+						{film.country[0] + ', ' + film.genre[0]}
 					</p>
 				</div>
 			</a>
@@ -93,7 +100,19 @@ export default function NewFilmsSlider() {
 						)
 					</span>
 				</div>
-				<div className='slider'>
+				<div
+					className='slider'
+					style={{ padding: `0px ${sliderConfig.sliderBtnWidth + 10}px` }}>
+					<button
+						className='slider-btn-prev'
+						style={btnSliderStyle}>
+						<span className='slider-btn-prev_arrow-left'></span>
+					</button>
+					<button
+						className='slider-btn-next'
+						style={btnSliderStyle}>
+						<span className='slider-btn-prev_arrow-right'></span>
+					</button>
 					{newFilms.map(film => {
 						return createSliderFilmCard(film, `film-${film.id}`);
 					})}
