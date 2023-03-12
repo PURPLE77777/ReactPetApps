@@ -91,37 +91,39 @@
 	}
 	.slider-cards-wrap {
 		overflow: hidden;
-		margin-left: -10px;
+		// margin-left: -10px;
 		.slider-cards-container {
-			position: relative;
 			display: flex;
 			flex-flow: row nowrap;
-			transition: margin-left 2s linear;
-			.film-card {
-				display: block;
-				margin-left: 10px;
-				cursor: pointer;
-				height: fit-content;
-				.film-pic {
-					padding: 2px;
-					border: 2px solid white;
-					.film-pic_img {
-					}
-				}
-				.short-desc {
-					word-break: break-word;
-					.film-title {
-						line-height: 16px;
-						font-size: 12px;
-						font-weight: bold;
-						color: #2e859e;
-						&:hover {
-							color: #369ebb;
+			.slider-page {
+				display: flex;
+				flex-flow: row nowrap;
+				.film-card {
+					display: block;
+					margin-left: 10px;
+					cursor: pointer;
+					height: fit-content;
+					.film-pic {
+						padding: 2px;
+						border: 2px solid white;
+						.film-pic_img {
 						}
 					}
-					.film-short-info {
-						color: rgba(255, 255, 255, 0.5);
-						font-size: 11px;
+					.short-desc {
+						word-break: break-word;
+						.film-title {
+							line-height: 16px;
+							font-size: 12px;
+							font-weight: bold;
+							color: #2e859e;
+							&:hover {
+								color: #369ebb;
+							}
+						}
+						.film-short-info {
+							color: rgba(255, 255, 255, 0.5);
+							font-size: 11px;
+						}
 					}
 				}
 			}
