@@ -44,31 +44,23 @@ export default function NewFilmsSlider() {
 	let currentPage = 0;
 	const pageWidth: number = (sliderConfig.imgWidth + 8 + 10) * sliderConfig.countCardsOnOneList;
 	const removeLastPage = () => {
-		let pages = document.querySelectorAll('.slider-page');
-		let lastPage = pages[pages.length - 1];
-		let clonePage = lastPage.cloneNode(true);
-		// let prevSibl = pages[0].previousSibling;
-		// let prevSiblClone = prevSibl?.cloneNode();
-		// prevSibl?.remove();
+		const pages = document.querySelectorAll('.slider-page');
+		const lastPage = pages[pages.length - 1];
+		const clonePage = lastPage.cloneNode(true);
 		pages[0].before(clonePage);
-		// if (prevSiblClone) lastPage.before(prevSiblClone);
 		lastPage.remove();
 	};
 
 	const removeFirstPage = () => {
-		let pages = document.querySelectorAll('.slider-page');
-		let firstPage = pages[0];
-		let clonePage = firstPage.cloneNode(true);
-		// let nextSibl = pages[pages.length - 1].nextSibling;
-		// let nextSiblClone = nextSibl?.cloneNode();
-		// nextSibl?.remove();
+		const pages = document.querySelectorAll('.slider-page');
+		const firstPage = pages[0];
+		const clonePage = firstPage.cloneNode(true);
 		pages[pages.length - 1].after(clonePage);
-		// if (nextSiblClone) firstPage.before(nextSiblClone);
 		firstPage.remove();
 	};
 
 	const prevPage = () => {
-		let ctr = cardsContainer.current;
+		const ctr = cardsContainer.current;
 		if (ctr && currentPage == 0) {
 			ctr.style.transition = 'none';
 			ctr.style.marginLeft = `calc(${ctr.style.marginLeft} - ${pageWidth}px)`;
@@ -85,7 +77,7 @@ export default function NewFilmsSlider() {
 	};
 
 	const nextPage = () => {
-		let ctr = cardsContainer.current;
+		const ctr = cardsContainer.current;
 		if (ctr && currentPage == sliderConfig.countLists - 1) {
 			ctr.style.marginLeft = `calc(${ctr.style.marginLeft} + ${pageWidth}px)`;
 			ctr.style.transition = 'none';

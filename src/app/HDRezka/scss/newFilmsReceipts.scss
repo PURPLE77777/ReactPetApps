@@ -1,0 +1,59 @@
+.last-receipts-container {
+	display: flex;
+	flex-direction: column;
+	.last-receipts-wrap {
+		max-width: 960px;
+		width: 100%;
+		margin: 0px auto;
+		.films-cards-container {
+			display: flex;
+			flex-direction: column;
+			.films-cards_header {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				.main-chapters,
+				.films-types {
+					display: flex;
+					flex-flow: row nowrap;
+					.chapter,
+					.type {
+						display: block;
+						padding: 10px;
+						color: #fff;
+						text-decoration: underline;
+						border-radius: 3px;
+						transition: all 0.2s linear;
+						font-size: 13px;
+						&:hover {
+							background-color: rgba(255, 255, 255, 0.1);
+							text-decoration: none;
+						}
+					}
+					.type,
+					.type-text {
+						padding: 10px 5px;
+						font-size: 13px;
+					}
+					.active-chapter,
+					.active-type {
+						background-color: rgba(255, 255, 255, 0.1);
+						text-decoration: none;
+					}
+					.type-text {
+						color: #999;
+					}
+				}
+			}
+
+			.films-cards {
+			}
+		}
+		.serials-last-series {
+		}
+	}
+	.lastword {
+		max-width: 960px;
+		width: 100%;
+	}
+}
