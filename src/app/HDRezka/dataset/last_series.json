@@ -1,0 +1,222 @@
+[
+	{
+		"id": 1,
+		"name": "Хадсон и Рекс",
+		"date": 1679616000000,
+		"season": 5,
+		"episode": 16,
+		"quote": "Due North",
+		"translater": "Coldfilm",
+		"duration": 2711000
+	},
+	{
+		"id": 2,
+		"name": "Мастера вечеринок",
+		"date": 1679616000000,
+		"season": 3,
+		"episode": 5,
+		"quote": "Due North",
+		"translater": "Coldfilm",
+		"duration": 2711000
+	},
+	{
+		"id": 3,
+		"name": "Контроль за животными",
+		"date": 1679616000000,
+		"season": 1,
+		"episode": 6,
+		"quote": "Skunks and Llamas",
+		"translater": "RUDUB",
+		"duration": 2005000
+	},
+	{
+		"id": 4,
+		"name": "Связь с Рио",
+		"date": 1679616000000,
+		"season": 1,
+		"episode": 5,
+		"quote": "",
+		"translater": "Coldfilm",
+		"duration": 1994000
+	},
+	{
+		"id": 5,
+		"name": "Закон и порядок. Специальный корпус",
+		"date": 1679616000000,
+		"season": 24,
+		"episode": 16,
+		"quote": "",
+		"translater": "Coldfilm",
+		"duration": 1994000
+	},
+	{
+		"id": 6,
+		"name": "Королева юга",
+		"date": 1679616000000,
+		"season": 3,
+		"episode": 55,
+		"quote": "Una celebridad",
+		"translater": "Субтитры",
+		"duration": 2604000
+	},
+	{
+		"id": 7,
+		"name": "Квантовый скачок",
+		"date": 1679616000000,
+		"season": 1,
+		"episode": 16,
+		"quote": "Una celebridad",
+		"translater": "TVShows",
+		"duration": 2560000
+	},
+	{
+		"id": 8,
+		"name": "911 служба спасения",
+		"date": 1679616000000,
+		"season": 6,
+		"episode": 12,
+		"quote": "Recovery",
+		"translater": "TVShows",
+		"duration": 2760000
+	},
+	{
+		"id": 9,
+		"name": "Мой папа - охотник за инопланетянами",
+		"date": 1679616000000,
+		"season": 1,
+		"episode": 9,
+		"quote": "Showdown",
+		"translater": "TVShows",
+		"duration": 1704000
+	},
+	{
+		"id": 10,
+		"name": "Мандалорец",
+		"date": 1679616000000,
+		"season": 3,
+		"episode": 4,
+		"quote": "Showdown",
+		"translater": "Chapter 20: The Foundling",
+		"duration": 2655000
+	},
+	{
+		"id": 11,
+		"name": "Медики Чикаго",
+		"date": 1679529600000,
+		"season": 8,
+		"episode": 16,
+		"quote": "",
+		"translater": "RUDUB",
+		"duration": 2532000
+	},
+	{
+		"id": 12,
+		"name": "Рыцари Готэма",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 2,
+		"quote": "Scene of the Crime",
+		"translater": "LostFilm",
+		"duration": 2514000
+	},
+	{
+		"id": 13,
+		"name": "Томо - девушка!",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 12,
+		"quote": "Goodbye, Best Friend",
+		"translater": "Anilibria",
+		"duration": 1421000
+	},
+	{
+		"id": 14,
+		"name": "Последниц король креста",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 7,
+		"quote": "",
+		"translater": "Coldfilm",
+		"duration": 2749000
+	},
+	{
+		"id": 15,
+		"name": "Волшебник ледяного клинка правит миром",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 12,
+		"quote": "The Boy Who Became the World's Strongest Sorcerer Unveils Akasa!",
+		"translater": "Субтитры",
+		"duration": 1450000
+	},
+	{
+		"id": 16,
+		"name": "Не люблю боль, поэтому собираюсь вложить всё в защиту [ТВ-2]",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 12,
+		"quote": "Maxing Defense and Setting Up a Base",
+		"translater": "Anilibria",
+		"duration": 1420000
+	},
+	{
+		"id": 17,
+		"name": "Сага о Винланде [ТВ-2]",
+		"date": 1679529600000,
+		"season": 2,
+		"episode": 11,
+		"quote": "Maxing Defense and Setting Up a Base",
+		"translater": "Amber",
+		"duration": 1564000
+	},
+	{
+		"id": 18,
+		"name": "Мой братик теперь не братик!",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 12,
+		"quote": "まひろのおしまいとこれから",
+		"translater": "Субтитры",
+		"duration": 1564000
+	},
+	{
+		"id": 19,
+		"name": "Школьные духи",
+		"date": 1679529600000,
+		"season": 1,
+		"episode": 3,
+		"quote": "Dead and Confused",
+		"translater": "Субтитры",
+		"duration": 2716000
+	},
+	{
+		"id": 20,
+		"name": "Расследования Мердока",
+		"date": 1679529600000,
+		"season": 16,
+		"episode": 21,
+		"quote": "Murder in F Major",
+		"translater": "TVShows",
+		"duration": 2743000
+	},
+	{
+		"id": 21,
+		"name": "Хороший доктор",
+		"date": 1679443200000,
+		"season": 6,
+		"episode": 17,
+		"quote": "Second Chances and Past Regrets",
+		"translater": "LostFilm",
+		"duration": 2616000
+	},
+	{
+		"id": 22,
+		"name": "Переродился, чтобы стать мастером меча: из великого короля в ученицу рыцаря",
+		"date": 1679356800000,
+		"season": 1,
+		"episode": 11,
+		"quote": "見習い騎士、無双す",
+		"translater": "Anilibria",
+		"duration": 1430000
+	}
+]

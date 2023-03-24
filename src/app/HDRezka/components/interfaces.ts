@@ -11,3 +11,14 @@ export interface Film {
 	translaters: string[];
 	age: number;
 }
+
+export interface Episode {
+	id: number;
+	name: string;
+	date: number;
+	season: number;
+	episode: number;
+	quote: string;
+	translater: string;
+	duration: number;
+}

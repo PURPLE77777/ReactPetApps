@@ -5,51 +5,104 @@
 		max-width: 960px;
 		width: 100%;
 		margin: 0px auto;
-		.films-cards-container {
+		padding: 40px 0px;
+		.films-cards_header {
 			display: flex;
-			flex-direction: column;
-			.films-cards_header {
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			.main-chapters,
+			.films-types {
 				display: flex;
 				flex-flow: row nowrap;
-				justify-content: space-between;
-				.main-chapters,
-				.films-types {
-					display: flex;
-					flex-flow: row nowrap;
-					.chapter,
-					.type {
-						display: block;
-						padding: 10px;
-						color: #fff;
-						text-decoration: underline;
-						border-radius: 3px;
-						transition: all 0.2s linear;
-						font-size: 13px;
-						&:hover {
-							background-color: rgba(255, 255, 255, 0.1);
-							text-decoration: none;
-						}
-					}
-					.type,
-					.type-text {
-						padding: 10px 5px;
-						font-size: 13px;
-					}
-					.active-chapter,
-					.active-type {
+				.chapter,
+				.type {
+					display: block;
+					padding: 10px;
+					color: #fff;
+					text-decoration: underline;
+					border-radius: 3px;
+					transition: all 0.2s linear;
+					font-size: 13px;
+					&:hover {
 						background-color: rgba(255, 255, 255, 0.1);
 						text-decoration: none;
 					}
-					.type-text {
-						color: #999;
+				}
+				.type,
+				.type-text {
+					padding: 10px 5px;
+					font-size: 13px;
+				}
+				.active-chapter,
+				.active-type {
+					background-color: rgba(255, 255, 255, 0.1);
+					text-decoration: none;
+				}
+				.type-text {
+					color: #999;
+				}
+			}
+		}
+		.films-container {
+			width: 100%;
+			padding-top: 38px;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			.films-cards {
+				display: flex;
+				flex-flow: row wrap;
+				width: 590px;
+				.film-card {
+					display: block;
+					margin: 0px 0px 20px 16px;
+					cursor: pointer;
+					height: fit-content;
+					&:nth-child(3n + 1) {
+						margin-left: 0px;
+					}
+					.film-pic {
+						padding: 3px;
+						background-color: #222d33;
+						border: 1px solid rgba(255, 255, 255, 0.25);
+						border-radius: 2px;
+						.film-pic_img {
+						}
+					}
+					.short-desc {
+						word-break: break-word;
+						.film-title {
+							line-height: 16px;
+							font-size: 12px;
+							font-weight: bold;
+							color: #2e859e;
+							&:hover {
+								color: #369ebb;
+							}
+						}
+						.film-short-info {
+							color: rgba(255, 255, 255, 0.5);
+							font-size: 11px;
+						}
 					}
 				}
 			}
-
-			.films-cards {
+			.serials-last-series {
+				width: 386px;
+				.serials-title {
+					width: inherit;
+					margin: 0px;
+					font-size: 24px;
+					line-height: 24px;
+					padding-bottom: 10px;
+				}
+				.serials {
+					display: flex;
+					flex-direction: column;
+					.serials-in-day-block {
+					}
+				}
 			}
-		}
-		.serials-last-series {
 		}
 	}
 	.lastword {

@@ -80,23 +80,6 @@
 					}
 				}
 			}
-			// .chapter-show-all {
-
-			// 	border-bottom: 1px dotted #555;
-			// 	cursor: pointer;
-			// 	background-color: transparent;
-
-			// 	line-height: 16px;
-			// 	padding: 0px;
-			// 	&:hover {
-			// 		border: none;
-			// 	}
-
-			// 	.selected-chapter {
-			// 		color: #777;
-			// 		border: none;
-			// 	}
-			// }
 			.selected-chapter {
 				color: #777;
 				border: none;
@@ -114,8 +97,10 @@
 					cursor: pointer;
 					height: fit-content;
 					.film-pic {
-						padding: 2px;
-						border: 2px solid white;
+						padding: 3px;
+						background-color: #222d33;
+						border: 1px solid rgba(255, 255, 255, 0.25);
+						border-radius: 2px;
 						.film-pic_img {
 						}
 					}
