@@ -7,11 +7,17 @@ import { Episode, Film } from './interfaces';
 export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
 	const [serials, setSerials] = useState<Episode[]>([]);
+	const date = new Date();
 
 	const cardConfig = {
 		imgWidth: 166,
 		imgHeight: 250
 	};
+
+	useEffect(() => {
+		setFilms(lastFilms);
+		setSerials(lastEpisodes);
+	}, []);
 
 	const arraySeriesHandler = (() => {
 		let curTime: number = new Date().getTime();
@@ -20,6 +26,7 @@ export default function NewFilmsReceipts() {
 			return curTime - 3 * 3_600_000 - 86_400_000 * order;
 		};
 	})();
+	const times = Array.from({ length: 6 }, (_, i) => arraySeriesHandler(i));
 
 	const createFilmCard = (film: Film) => {
 		return (
@@ -48,10 +55,42 @@ export default function NewFilmsReceipts() {
 		);
 	};
 
-	useEffect(() => {
-		setFilms(lastFilms);
-		setSerials(lastEpisodes);
-	}, []);
+	const createDayBlock = (time: number) => {
+		const getDateString = (time: number) => {
+			const months = [
+				'января',
+				'февраля',
+				'марта',
+				'апреля',
+				'мая',
+				'июня',
+				'июля',
+				'августа',
+				'сентября',
+				'октября',
+				'ноября',
+				'декабря'
+			];
+			const tm = new Date(time);
+			const timeString = `${tm.getDate()} ${months[tm.getMonth()]} ${tm.getFullYear()}`;
+			const dateString: string =
+				time == times[0]
+					? `Сегодня (${timeString})`
+					: time == times[1]
+					? `Вчера (${timeString})`
+					: `${timeString}`;
+			return dateString;
+		};
+
+		return (
+			<div
+				className='serials-in-day-block'
+				key={time}>
+				<div>{getDateString(time)}</div>
+				<div>serials</div>
+			</div>
+		);
+	};
 
 	return (
 		<div className='last-receipts-container'>
@@ -119,14 +158,8 @@ export default function NewFilmsReceipts() {
 					<div className='serials-last-series'>
 						<h4 className='serials-title'>Горячие обновления сериалов:</h4>
 						<div className='serials'>
-							{Array.from({ length: 6 }, (_, i) => arraySeriesHandler(i)).map(time => {
-								return (
-									<div
-										className='serials-in-day-block'
-										key={time}>
-										{<h4>{String(new Date(time))}</h4>}
-									</div>
-								);
+							{times.map(time => {
+								return createDayBlock(time);
 							})}
 						</div>
 					</div>

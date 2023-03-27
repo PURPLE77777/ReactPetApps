@@ -2,8 +2,10 @@
 	background-color: #09161c;
 	color: white;
 	display: flex;
+	min-height: 100%;
 	flex-flow: column nowrap;
 	align-items: center;
+	justify-content: space-between;
 	.max-w960 {
 		max-width: 960px;
 		width: 100%;
@@ -16,7 +18,6 @@
 		width: 100%;
 	}
 	.main {
-		height: 800px;
 		width: 100%;
 		height: fit-content;
 	}
