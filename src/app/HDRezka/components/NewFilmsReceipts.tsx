@@ -8,6 +8,7 @@ export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
 	const [serials, setSerials] = useState<Episode[]>([]);
 	const date = new Date();
+	// test
 
 	const cardConfig = {
 		imgWidth: 166,
@@ -77,8 +78,8 @@ export default function NewFilmsReceipts() {
 				time == times[0]
 					? `Сегодня (${timeString})`
 					: time == times[1]
-					? `Вчера (${timeString})`
-					: `${timeString}`;
+						? `Вчера (${timeString})`
+						: `${timeString}`;
 			return dateString;
 		};
 
