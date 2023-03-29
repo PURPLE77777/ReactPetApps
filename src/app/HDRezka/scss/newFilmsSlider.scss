@@ -5,8 +5,6 @@
 	position: relative;
 	margin-top: 20px;
 	.slider-btns-wrap {
-		width: 100%;
-		max-width: 960px;
 		position: relative;
 		box-sizing: border-box;
 		.slider-btn-prev,
@@ -47,8 +45,6 @@
 	.slider-cards-wrap {
 		overflow: hidden;
 		.chapters {
-			width: 100%;
-			max-width: 960px;
 			color: #fff;
 			font-weight: bold;
 			font-size: 16px;
@@ -96,6 +92,13 @@
 					margin-left: 10px;
 					cursor: pointer;
 					height: fit-content;
+					&:hover {
+						.short-desc {
+							.film-title {
+								text-decoration: underline;
+							}
+						}
+					}
 					.film-pic {
 						padding: 3px;
 						background-color: #222d33;

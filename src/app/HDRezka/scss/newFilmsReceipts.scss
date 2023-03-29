@@ -1,11 +1,10 @@
 .last-receipts-container {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 80px;
 	.last-receipts-wrap {
-		max-width: 960px;
-		width: 100%;
 		margin: 0px auto;
-		padding: 40px 0px;
+		padding-top: 40px;
 		.films-cards_header {
 			display: flex;
 			flex-flow: row nowrap;
@@ -52,14 +51,25 @@
 			.films-cards {
 				display: flex;
 				flex-flow: row wrap;
-				width: 590px;
+				width: 554px;
+				// width: fit-content;
+				// width: -moz-fit-content; // 554px
+				border-bottom: 1px solid #162227;
 				.film-card {
 					display: block;
 					margin: 0px 0px 20px 16px;
 					cursor: pointer;
 					height: fit-content;
+					height: -moz-fit-content;
 					&:nth-child(3n + 1) {
 						margin-left: 0px;
+					}
+					&:hover {
+						.short-desc {
+							.film-title {
+								text-decoration: underline;
+							}
+						}
 					}
 					.film-pic {
 						padding: 3px;
@@ -89,29 +99,114 @@
 			}
 			.serials-last-series {
 				width: 386px;
+				height: fit-content;
+				height: -moz-fit-content;
 				.serials-title {
 					width: inherit;
 					margin: 0px;
 					font-size: 24px;
 					line-height: 24px;
 					padding-bottom: 10px;
+					font-weight: normal;
 				}
 				.serials {
 					display: flex;
 					flex-direction: column;
 					.serials-in-day-block {
-						padding: 11px 20px;
-						background-color: #192125;
-						color: #fff;
 						font-size: 14px;
 						font-weight: bold;
+						color: #fff;
+						margin-bottom: 5px;
+						.day-block-header {
+							padding: 11px 20px;
+							flex-direction: row;
+							background-color: #192125;
+							cursor: pointer;
+							display: flex;
+							justify-content: space-between;
+							.day-block-header_span-date {
+							}
+							.day-block-header_span-expand {
+								color: #878586;
+								font-size: 12px;
+							}
+							.color-white {
+								color: #fff;
+							}
+							&:hover {
+								.day-block-header_span-expand {
+									text-decoration: underline;
+								}
+							}
+							.display-none {
+								display: none;
+							}
+						}
+						.serials-container {
+							transition-property: max-height;
+							transition-duration: 0.2s;
+							transition-delay: 0s;
+							transition-timing-function: ease;
+							overflow: hidden;
+							max-height: 4200px;
+							.serial-block {
+								display: flex;
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+								border-bottom: 1px solid #162227;
+								background-color: #09161c;
+								font-size: 12px;
+								padding: 6px 10px 5px;
+								transition: background-color 0.2s linear;
+								cursor: pointer;
+								&:hover {
+									background-color: #162227;
+									.serial-name {
+										.serial-name_first-span {
+											color: #2e859e;
+										}
+									}
+								}
+								.serial-name {
+									padding-right: 5px;
+									.serial-name_first-span {
+										transition: color 0.2s linear;
+									}
+									.serial-name_second-span {
+										display: inline-block;
+									}
+								}
+								.serial-episode {
+									text-align: right;
+									display: flex;
+									flex-direction: column;
+								}
+							}
+						}
+						.collapse {
+							max-height: 0px;
+						}
 					}
 				}
 			}
 		}
 	}
 	.lastword {
-		max-width: 960px;
-		width: 100%;
+		margin: 0px auto;
+		padding: 30px 0px 50px;
+		color: rgba(255, 255, 255, 0.5);
+		h2 {
+			font-size: 20px;
+			margin: 10px 0px 0px;
+		}
+		h2:first-child {
+			font-size: 22px;
+			margin: 0px;
+		}
+		p {
+			margin: 5px 0px;
+			font-size: 14px;
+		}
 	}
 }

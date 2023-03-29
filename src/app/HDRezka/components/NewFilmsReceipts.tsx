@@ -7,8 +7,7 @@ import { Episode, Film } from './interfaces';
 export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
 	const [serials, setSerials] = useState<Episode[]>([]);
-	const date = new Date();
-	// test
+	// const date = new Date();
 
 	const cardConfig = {
 		imgWidth: 166,
@@ -22,9 +21,14 @@ export default function NewFilmsReceipts() {
 
 	const arraySeriesHandler = (() => {
 		let curTime: number = new Date().getTime();
-		curTime = 86_400_000 * Math.floor(curTime / 86_400_000); // 1_679_616_000_000
+		//curTime = 86_400_000 * Math.floor(curTime / 86_400_000); // 1_679_616_000_000
+
+		// this delete and uncomment previous
+		curTime = 1679616000000 - 3 * 3_600_000;
+		/////////////
+
 		return (order: number) => {
-			return curTime - 3 * 3_600_000 - 86_400_000 * order;
+			return curTime - 86_400_000 * order;
 		};
 	})();
 	const times = Array.from({ length: 6 }, (_, i) => arraySeriesHandler(i));
@@ -57,7 +61,7 @@ export default function NewFilmsReceipts() {
 	};
 
 	const createDayBlock = (time: number) => {
-		const getDateString = (time: number) => {
+		const getDateString = () => {
 			const months = [
 				'января',
 				'февраля',
@@ -82,20 +86,60 @@ export default function NewFilmsReceipts() {
 						: `${timeString}`;
 			return dateString;
 		};
+		const serialsByTime = serials.filter((episode) => {
+			return episode.date >= time && episode.date < time + 86_400_000;
+		});
+
+		const getSerialName = (episode: Episode) => {
+			return <>
+				<span className='serial-name_first-span'>{`${episode.name} `}</span>
+				<span className='serial-name_second-span'>{`(${episode.season} сезон)`}</span>
+			</>;
+		};
+
+		const getSerialEpisode = (episode: Episode) => {
+			return <>
+				<span>{`${episode.episode} серия`}</span>
+				<span>{`(${episode.translater})`}</span>
+			</>;
+		};
+
+
+		const headerHandler = (e: React.SyntheticEvent) => {
+			const serialsContainer = e.currentTarget.nextElementSibling as HTMLDivElement;
+			const spanExpand = e.currentTarget.childNodes[1] as HTMLSpanElement;
+			serialsContainer.classList.toggle('collapse');
+			spanExpand.classList.toggle('color-white');
+			if (serialsContainer.classList.contains('collapse')) {
+				spanExpand.innerHTML = 'развернуть';
+			} else {
+				spanExpand.innerHTML = 'свернуть';
+			}
+		};
 
 		return (
 			<div
 				className='serials-in-day-block'
 				key={time}>
-				<div>{getDateString(time)}</div>
-				<div>serials</div>
+				<div className='day-block-header' onClick={time == times[0] || time == times[1] ? undefined : headerHandler}>
+					<span className='day-block-header_span-date'>{getDateString()}</span>
+					<span className={time == times[0] || time == times[1] ? 'day-block-header_span-expand display-none' : 'day-block-header_span-expand'}>развернуть</span>
+				</div>
+				<div className={time == times[0] || time == times[1] ? 'serials-container' : 'serials-container collapse'}>
+					{serialsByTime.map((episode) => {
+						return <div className='serial-block' key={`serial_episode-${episode.id}`}>
+							<div className="serial-name">{getSerialName(episode)}</div>
+							<div className="serial-episode">{getSerialEpisode(episode)}</div>
+						</div>;
+					})}
+				</div>
 			</div>
 		);
 	};
 
 	return (
 		<div className='last-receipts-container'>
-			<div className='last-receipts-wrap'>
+			<div className='last-receipts-wrap max-w960'>
 				<div className='films-cards_header'>
 					<div className='main-chapters'>
 						<a
@@ -167,7 +211,20 @@ export default function NewFilmsReceipts() {
 				</div>
 			</div>
 
-			<div className='lastword'></div>
+			<div className='lastword max-w960'>
+				<h2>Смотреть фильмы в HD онлайн</h2>
+				<p>
+					Чем себя занять после тяжелых трудовых будней? Повседневная жизнь предлагает массу вариантов, но практически каждый человек на нашей планете любит просматривать любимые кинокартины. Мы создали удобный и уникальный в своем роде кинотеатр для просмотра видео в комфортных для тебя условиях. Тебе больше никогда не придется искать какую-то свободную минутку, чтобы найти подходящие кинотеатры, успеть купить в кассе или забронировать через интернет билеты на любимые места. Все это осталось позади больших перспектив смотреть фильмы онлайн в хорошем HD качестве на нашем сайте. Дорогой гость ресурса, предлагаем тебе прямо сейчас погрузиться в удивительно увлекательный мир - <strong>новинки кинопроката</strong> доступны всем пользователям круглосуточно!
+				</p>
+				<h2>Сериалы онлайн</h2>
+				<p>
+					Что же касается предлагаемого списка фильмов и сериалов, которые ты можешь здесь смотреть в HD качестве, то он постоянно расширяется и дополняется картинами популярнейших хитов Голливуда. Словом, каждый поклонник высококачественного мирового кинематографа обязательно найдет на нашем сайте то, что ему доставит море удовольствия от просмотра онлайн в домашних условиях! Зови друзей, и ты замечательно проведешь время вместе с близкими и родными людьми - наш ресурс станет прекрасным аккомпанементом для твоего расслабленного и веселого отдыха!
+				</p>
+				<h2>Фильмы и сериалы на iPhone, iPad и Android онлайн</h2>
+				<p>
+					К счастью наших посетителей, наш кинотеатр предлагает смотреть любимые фильмы и сериалы на мобильных устройствах - прямо со своего смартфона либо планшета под управлением iPhone, iPad или Android, находясь в любой точке мира! И прямо сейчас мы готовы предложить тебе воспользоваться всеми широкими возможностями сайта и перейти к сеансу онлайн просмотра лучших картин в привлекательном для глаз в HD качестве. Желаем тебе получить море удовольствий от самого массового и популярного вида искусства!
+				</p>
+			</div>
 		</div>
 	);
 }

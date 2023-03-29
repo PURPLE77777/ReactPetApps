@@ -138,7 +138,7 @@ export default function NewFilmsSlider() {
 
 	return (
 		<div className='slider-container'>
-			<div className='slider-btns-wrap'>
+			<div className='slider-btns-wrap max-w960'>
 				<button
 					className='slider-btn-prev'
 					style={btnSliderStyle}
@@ -158,7 +158,7 @@ export default function NewFilmsSlider() {
 					width: pageWidth - 10
 				}}>
 				<div
-					className='chapters'
+					className='chapters max-w960'
 					style={{
 						paddingBottom: sliderConfig.titleBottomPadding,
 						lineHeight: `${sliderConfig.titleLineHeight}px`

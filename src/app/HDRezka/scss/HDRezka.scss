@@ -9,7 +9,6 @@
 	.max-w960 {
 		max-width: 960px;
 		width: 100%;
-		background-color: cadetblue;
 	}
 	.header-container {
 		display: flex;
@@ -20,10 +19,5 @@
 	.main {
 		width: 100%;
 		height: fit-content;
-	}
-	.footer {
-		height: 300px;
-		background-color: darkgoldenrod;
-		width: 100%;
 	}
 }

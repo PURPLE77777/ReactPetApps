@@ -5,7 +5,7 @@ import '../scss/headerTop';
 export default function HeaderTop() {
 	return (
 		<div className='header_wrap-top'>
-			<div className='header-top'>
+			<div className='header-top max-w960'>
 				<div className='socials'>
 					<button className='socials_button'>Подпишись</button>
 					<div className='socials_theme-button'>

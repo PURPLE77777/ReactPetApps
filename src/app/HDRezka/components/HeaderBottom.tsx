@@ -4,10 +4,10 @@ import SearchIcon from '../img/search-icon.svg';
 import DropDownIcon from '../img/arrow_down.svg';
 
 export default function HeaderBottom() {
-	const searchInput: React.RefObject<HTMLInputElement> = useRef(null);
-	const search: React.RefObject<HTMLInputElement> = useRef(null);
-	const searchIcon: React.RefObject<HTMLImageElement> = useRef(null);
-	const hbMenu: React.RefObject<HTMLDivElement> = useRef(null);
+	const searchInput = useRef<HTMLInputElement>(null);
+	const search = useRef<HTMLInputElement>(null);
+	const searchIcon = useRef<HTMLImageElement>(null);
+	const hbMenu = useRef<HTMLDivElement>(null);
 
 	const addSearchFocus = () => {
 		searchInput.current?.focus();
@@ -33,7 +33,7 @@ export default function HeaderBottom() {
 
 	return (
 		<div className='header_wrap-bottom'>
-			<div className='header-bottom'>
+			<div className='header-bottom max-w960'>
 				<div
 					className='header-bottom_menu'
 					ref={hbMenu}>

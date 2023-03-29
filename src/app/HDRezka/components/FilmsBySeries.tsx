@@ -6,7 +6,7 @@ import notEasyGender2 from '../img/dont_easy_gender_2.png';
 export default function FilmsBySeries() {
 	return (
 		<div className='films-series-container'>
-			<div className='films-series-content'>
+			<div className='films-series-content max-w960'>
 				<a
 					href='#'
 					className='series'>

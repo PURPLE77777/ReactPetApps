@@ -1,11 +1,9 @@
 .films-series-container {
 	background-color: #040a0c;
 	.films-series-content {
-		width: 100%;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
-		max-width: 960px;
 		margin: 0px auto;
 		padding: 20px 0px;
 		.series {
