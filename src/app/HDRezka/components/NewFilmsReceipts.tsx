@@ -7,11 +7,16 @@ import { Episode, Film } from './interfaces';
 export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
 	const [serials, setSerials] = useState<Episode[]>([]);
-	// const date = new Date();
+	const [currentPage, setCurrentPage] = useState<number>(1);
 
 	const cardConfig = {
 		imgWidth: 166,
 		imgHeight: 250
+	};
+
+	const cardsFilmsConfig = {
+		countCards: 9,
+		countVisibleBtns: 9
 	};
 
 	useEffect(() => {
@@ -21,7 +26,7 @@ export default function NewFilmsReceipts() {
 
 	const arraySeriesHandler = (() => {
 		let curTime: number = new Date().getTime();
-		//curTime = 86_400_000 * Math.floor(curTime / 86_400_000); // 1_679_616_000_000
+		//curTime = 86_400_000 * Math.floor(curTime / 86_400_000) - 3 * 3_600_000; // 1_679_616_000_000
 
 		// this delete and uncomment previous
 		curTime = 1679616000000 - 3 * 3_600_000;
@@ -137,6 +142,21 @@ export default function NewFilmsReceipts() {
 		);
 	};
 
+	const createNavigationBtns = () => {
+		const countBtns = Math.ceil(films.length / cardsFilmsConfig.countCards);
+
+
+		return <>
+			{<a className='btn-navigation' href='#'>&lt;</a>}
+			{ }
+			{Array.from({ length: countBtns }, (_, i) => i + 1).map(num => {
+				return <a href='#' className={currentPage == num ? 'navigation-page current-page' : 'navigation-page'} key={`navigation-btns-page-${num}`}>{num}</a>;
+			})}
+			{ }
+			{<a className='btn-navigation' href='#'>&gt;</a>}
+		</>;
+	};
+
 	return (
 		<div className='last-receipts-container'>
 			<div className='last-receipts-wrap max-w960'>
@@ -194,12 +214,18 @@ export default function NewFilmsReceipts() {
 				</div>
 
 				<div className='films-container'>
-					<div className='films-cards'>
-						{films.map(film => {
-							return createFilmCard(film);
-						})}
+					<div className='films-cards-slider'>
+						<div className='films-cards'>
+							{films.map((film, ind) => {
+								if (ind < cardsFilmsConfig.countCards) {
+									return createFilmCard(film);
+								}
+							})}
+						</div>
+						<div className='pages-navigation-btns'>
+							{createNavigationBtns()}
+						</div>
 					</div>
-
 					<div className='serials-last-series'>
 						<h4 className='serials-title'>Горячие обновления сериалов:</h4>
 						<div className='serials'>
