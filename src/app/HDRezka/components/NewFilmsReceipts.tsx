@@ -15,8 +15,8 @@ export default function NewFilmsReceipts() {
 	};
 
 	const cardsFilmsConfig = {
-		countCards: 9,
-		countVisibleBtns: 9
+		countCardsOnPage: 9,
+		countCenterBtns: 3
 	};
 
 	useEffect(() => {
@@ -143,17 +143,53 @@ export default function NewFilmsReceipts() {
 	};
 
 	const createNavigationBtns = () => {
-		const countBtns = Math.ceil(films.length / cardsFilmsConfig.countCards);
+		const countBtns = Math.ceil(films.length / cardsFilmsConfig.countCardsOnPage);
+		const difference = Math.floor(cardsFilmsConfig.countCenterBtns / 2);
 
+		const btns = [];
+		let countPaintedCenterBtns = 0,
+			nTroit = false;
+		for (let i = 1; i <= countBtns; i++) {
+			if (i == 1) {
+				if (currentPage !== 1) {
+					btns.push('prev');
+				}
+				btns.push(i);
+				if (currentPage - difference > 2) {
+					btns.push('troit');
+					i = countBtns - (currentPage + difference) > 1 ? currentPage - difference - 1 : countBtns - cardsFilmsConfig.countCenterBtns - 1;
+				}
+				continue;
+			}
+			btns.push(i);
+			if (countPaintedCenterBtns + 1 == cardsFilmsConfig.countCenterBtns) {
+				if (!nTroit && countBtns - (currentPage + difference) > 1) {
+					nTroit = true;
+					btns.push('troit');
+					i = countBtns - 1;
+					continue;
+				}
+
+			} else {
+				countPaintedCenterBtns++;
+			}
+			if (i == countBtns && currentPage != countBtns) {
+				btns.push('next');
+			}
+		}
 
 		return <>
-			{<a className='btn-navigation' href='#'>&lt;</a>}
-			{ }
-			{Array.from({ length: countBtns }, (_, i) => i + 1).map(num => {
-				return <a href='#' className={currentPage == num ? 'navigation-page current-page' : 'navigation-page'} key={`navigation-btns-page-${num}`}>{num}</a>;
+			{btns.map((btn, ind) => {
+				return btn == 'next' || btn == 'prev' ? <button key={`btn-nav-${btn}-${ind}`} onClick={() => { btn == 'prev' ? setCurrentPage(currentPage - 1) : setCurrentPage(currentPage + 1); }} className='btn-navigation'>{btn == 'prev' ? '<' : '>'}</button> :
+					btn == 'troit' ? <span className='navigation-page troit' key={`btn-nav-${btn}-${ind}`}>...</span> :
+						<a href='#'
+							key={`btn-nav-${btn}-${ind}`}
+							className={btn == currentPage ?
+								'navigation-page current-page' :
+								'navigation-page'}>
+							{btn}
+						</a>;
 			})}
-			{ }
-			{<a className='btn-navigation' href='#'>&gt;</a>}
 		</>;
 	};
 
@@ -217,7 +253,7 @@ export default function NewFilmsReceipts() {
 					<div className='films-cards-slider'>
 						<div className='films-cards'>
 							{films.map((film, ind) => {
-								if (ind < cardsFilmsConfig.countCards) {
+								if (ind >= (currentPage - 1) * cardsFilmsConfig.countCardsOnPage && ind < currentPage * cardsFilmsConfig.countCardsOnPage) {
 									return createFilmCard(film);
 								}
 							})}

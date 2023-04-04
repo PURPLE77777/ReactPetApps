@@ -4,9 +4,13 @@
 	align-items: center;
 	position: relative;
 	margin-top: 20px;
+
 	.slider-btns-wrap {
-		position: relative;
+		position: absolute;
 		box-sizing: border-box;
+		height: 100%;
+		overflow: hidden;
+
 		.slider-btn-prev,
 		.slider-btn-next {
 			background-color: rgba(255, 255, 255, 0.1);
@@ -16,6 +20,7 @@
 			padding: 0px;
 			border: none;
 			border-radius: 2px;
+
 			.slider-btn-prev_arrow-left,
 			.slider-btn-prev_arrow-right {
 				position: absolute;
@@ -23,31 +28,40 @@
 				margin: -20px 0px 0px -20px;
 				border: 20px solid transparent;
 			}
+
 			&:hover {
 				background-color: rgba(255, 255, 255, 0.15);
 			}
 		}
+
 		.slider-btn-prev {
 			left: 0px;
+
 			.slider-btn-prev_arrow-left {
 				border-right: 20px solid white;
 				left: 20%;
 			}
 		}
+
 		.slider-btn-next {
 			right: 0px;
+
 			.slider-btn-prev_arrow-right {
 				left: 80%;
 				border-left: 20px solid white;
 			}
 		}
 	}
+
 	.slider-cards-wrap {
 		overflow: hidden;
+		z-index: 1;
+
 		.chapters {
 			color: #fff;
 			font-weight: bold;
-			font-size: 16px;
+			height: 16px;
+
 			.chapter {
 				color: #2e859e;
 				border-bottom: 1px dotted #555;
@@ -55,14 +69,17 @@
 				background-color: transparent;
 				font-weight: bold;
 				line-height: 16px;
+
 				&:hover {
 					border: none;
 				}
+
 				&:nth-child(5) {
 					color: #555;
 					border-bottom: none;
 					font-size: 13px;
 					vertical-align: top;
+
 					.show-all_span {
 						color: #2e859e;
 						font-size: 14px;
@@ -70,28 +87,34 @@
 						cursor: pointer;
 						font-weight: normal;
 						line-height: 16px;
+
 						&:hover {
 							border-bottom: none;
 						}
 					}
 				}
 			}
+
 			.selected-chapter {
 				color: #777;
 				border: none;
 			}
 		}
+
 		.slider-cards-container {
 			display: flex;
 			flex-flow: row nowrap;
+
 			.slider-page {
 				display: flex;
 				flex-flow: row nowrap;
+
 				.film-card {
 					display: block;
 					margin-left: 10px;
 					cursor: pointer;
 					height: fit-content;
+
 					&:hover {
 						.short-desc {
 							.film-title {
@@ -99,25 +122,30 @@
 							}
 						}
 					}
+
 					.film-pic {
 						padding: 3px;
 						background-color: #222d33;
 						border: 1px solid rgba(255, 255, 255, 0.25);
 						border-radius: 2px;
-						.film-pic_img {
-						}
+
+						.film-pic_img {}
 					}
+
 					.short-desc {
 						word-break: break-word;
+
 						.film-title {
 							line-height: 16px;
 							font-size: 12px;
 							font-weight: bold;
 							color: #2e859e;
+
 							&:hover {
 								color: #369ebb;
 							}
 						}
+
 						.film-short-info {
 							color: rgba(255, 255, 255, 0.5);
 							font-size: 11px;
