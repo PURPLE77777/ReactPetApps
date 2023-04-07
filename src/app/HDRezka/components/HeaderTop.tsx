@@ -14,7 +14,7 @@ export default function HeaderTop() {
 				</div>
 				<Link
 					className='main-logo'
-					to='#'
+					to='.'
 				/>
 				<div className='menu-buttons'>
 					<div className='menu-buttons_button'>

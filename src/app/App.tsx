@@ -4,6 +4,7 @@ import './main';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HDRezkaMain from './HDRezka/components/HDRezkaMain';
 import ErrorPage from './common/components/ErrorPage';
+import NewFilmsReceipts from './HDRezka/components/NewFilmsReceipts';
 
 const router = createBrowserRouter([
 	{
@@ -13,13 +14,22 @@ const router = createBrowserRouter([
 	},
 	{
 		path: 'hdrezka',
-		element: <HDRezkaMain />
-	}
+		element: <HDRezkaMain />,
+		children: [
+			{
+				path: 'receipts/:page',
+				element: <NewFilmsReceipts />,
+				loader: ({ params }) => {
+					return params.page;
+				}
+			}
+		]
+	},
 	// all incorrect urls will direct to MainWindow
-	// {
-	// 	path: '*',
-	// 	element: <MainWindow />
-	// }
+	{
+		path: '*',
+		element: <MainWindow />
+	}
 	//////////////////////
 ]);
 

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import '../scss/headerBottom.scss';
 import SearchIcon from '../img/search-icon.svg';
 import DropDownIcon from '../img/arrow_down.svg';
+import { Link } from 'react-router-dom';
 
 export default function HeaderBottom() {
 	const searchInput = useRef<HTMLInputElement>(null);
@@ -37,43 +38,43 @@ export default function HeaderBottom() {
 				<div
 					className='header-bottom_menu'
 					ref={hbMenu}>
-					<div className='menu_item'>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text with-dropdown'>Фильмы</span>
 						<img
 							src={DropDownIcon}
 							className='dropdown-icon'
 						/>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text with-dropdown'>Сериалы</span>
 						<img
 							src={DropDownIcon}
 							className='dropdown-icon'
 						/>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text with-dropdown'>Мультфильмы</span>
 						<img
 							src={DropDownIcon}
 							className='dropdown-icon'
 						/>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text with-dropdown'>Аниме</span>
 						<img
 							src={DropDownIcon}
 							className='dropdown-icon'
 						/>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text'>Новинки</span>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text'>Анонсы</span>
-					</div>
-					<div className='menu_item'>
+					</Link>
+					<Link to='.' className='menu_item'>
 						<span className='menu-item_text'>Подборки</span>
-					</div>
+					</Link>
 				</div>
 				<div
 					className='search'

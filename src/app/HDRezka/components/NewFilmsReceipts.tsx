@@ -3,11 +3,18 @@ import '../scss/newFilmsReceipts.scss';
 import lastFilms from '../dataset/last_films.json';
 import lastEpisodes from '../dataset/last_series.json';
 import { Episode, Film } from './interfaces';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 
 export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
 	const [serials, setSerials] = useState<Episode[]>([]);
-	const [currentPage, setCurrentPage] = useState<number>(1);
+	const page = Number(useLoaderData());
+	const [currentPage, setCurrentPage] = useState<number>(page ? page : 1);
+	if (page && page != currentPage) setCurrentPage(page);
+
+	const { pathname } = useLocation();
+	const navigate = useNavigate();
+	const isPageSelected = pathname.includes('/receipts/');
 
 	const cardConfig = {
 		imgWidth: 166,
@@ -41,7 +48,7 @@ export default function NewFilmsReceipts() {
 	const createFilmCard = (film: Film) => {
 		return (
 			<a
-				className='film-card'
+				className={isPageSelected ? 'film-card margin-left-6' : 'film-card'}
 				style={{ width: cardConfig.imgWidth + 8 }}
 				key={`film-${film.id}`}>
 				<div
@@ -180,15 +187,24 @@ export default function NewFilmsReceipts() {
 
 		return <>
 			{btns.map((btn, ind) => {
-				return btn == 'next' || btn == 'prev' ? <button key={`btn-nav-${btn}-${ind}`} onClick={() => { btn == 'prev' ? setCurrentPage(currentPage - 1) : setCurrentPage(currentPage + 1); }} className='btn-navigation'>{btn == 'prev' ? '<' : '>'}</button> :
+				return btn == 'next' || btn == 'prev' ?
+					<button key={`btn-nav-${btn}-${ind}`}
+						onClick={() => {
+							btn == 'prev' ?
+								navigate(isPageSelected ? `../receipts/${currentPage - 1}` : `receipts/${currentPage - 1}`) :
+								navigate(isPageSelected ? `../receipts/${currentPage + 1}` : `receipts/${currentPage + 1}`);
+						}}
+						className='btn-navigation'>
+						{btn == 'prev' ? '<' : '>'}
+					</button> :
 					btn == 'troit' ? <span className='navigation-page troit' key={`btn-nav-${btn}-${ind}`}>...</span> :
-						<a href='#'
+						<Link to={isPageSelected ? `../receipts/${btn}` : `receipts/${btn}`}
 							key={`btn-nav-${btn}-${ind}`}
 							className={btn == currentPage ?
 								'navigation-page current-page' :
 								'navigation-page'}>
 							{btn}
-						</a>;
+						</Link>;
 			})}
 		</>;
 	};
@@ -251,7 +267,7 @@ export default function NewFilmsReceipts() {
 
 				<div className='films-container'>
 					<div className='films-cards-slider'>
-						<div className='films-cards'>
+						<div className={isPageSelected ? 'films-cards width-714' : 'films-cards'}>
 							{films.map((film, ind) => {
 								if (ind >= (currentPage - 1) * cardsFilmsConfig.countCardsOnPage && ind < currentPage * cardsFilmsConfig.countCardsOnPage) {
 									return createFilmCard(film);
@@ -262,18 +278,20 @@ export default function NewFilmsReceipts() {
 							{createNavigationBtns()}
 						</div>
 					</div>
-					<div className='serials-last-series'>
+
+					{!isPageSelected && <div className='serials-last-series'>
 						<h4 className='serials-title'>Горячие обновления сериалов:</h4>
 						<div className='serials'>
 							{times.map(time => {
 								return createDayBlock(time);
 							})}
 						</div>
-					</div>
+					</div>}
+
 				</div>
 			</div>
 
-			<div className='lastword max-w960'>
+			{!isPageSelected && <div className='lastword max-w960'>
 				<h2>Смотреть фильмы в HD онлайн</h2>
 				<p>
 					Чем себя занять после тяжелых трудовых будней? Повседневная жизнь предлагает массу вариантов, но практически каждый человек на нашей планете любит просматривать любимые кинокартины. Мы создали удобный и уникальный в своем роде кинотеатр для просмотра видео в комфортных для тебя условиях. Тебе больше никогда не придется искать какую-то свободную минутку, чтобы найти подходящие кинотеатры, успеть купить в кассе или забронировать через интернет билеты на любимые места. Все это осталось позади больших перспектив смотреть фильмы онлайн в хорошем HD качестве на нашем сайте. Дорогой гость ресурса, предлагаем тебе прямо сейчас погрузиться в удивительно увлекательный мир - <strong>новинки кинопроката</strong> доступны всем пользователям круглосуточно!
@@ -286,7 +304,7 @@ export default function NewFilmsReceipts() {
 				<p>
 					К счастью наших посетителей, наш кинотеатр предлагает смотреть любимые фильмы и сериалы на мобильных устройствах - прямо со своего смартфона либо планшета под управлением iPhone, iPad или Android, находясь в любой точке мира! И прямо сейчас мы готовы предложить тебе воспользоваться всеми широкими возможностями сайта и перейти к сеансу онлайн просмотра лучших картин в привлекательном для глаз в HD качестве. Желаем тебе получить море удовольствий от самого массового и популярного вида искусства!
 				</p>
-			</div>
+			</div>}
 		</div>
 	);
 }
