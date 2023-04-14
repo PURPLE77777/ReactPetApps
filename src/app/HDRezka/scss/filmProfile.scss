@@ -1,0 +1,146 @@
+.film-profile-container {
+    padding: 30px 280px 0px 0px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .main-film-desc {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .film-trailer {
+            .trailet_img {
+                display: block;
+                border-radius: 5px;
+                overflow: hidden;
+                width: 200px;
+                cursor: pointer;
+
+                img {
+                    width: inherit;
+                }
+            }
+
+            .trailer_btn {
+                width: 100%;
+                margin: 15px 0px 10px;
+                padding: 9px 0px;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, .1);
+
+                transition: background-color .25s ease-in-out;
+                border: none;
+                font-weight: bold;
+                line-height: 14px;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+                .trailer_btn_img {
+                    border-radius: 50%;
+                    width: 23px;
+                    height: 23px;
+                    background-color: #fff;
+                    position: relative;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        opacity: .7;
+                        top: 5.5px;
+                        left: 7.5px;
+                        width: 10px;
+                        height: 12px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 10px 12px;
+                        background-image: url(../img/arrow_launch.svg);
+                    }
+                }
+
+                .trailer_btn_txt {
+                    display: flex;
+                    align-items: center;
+                    color: #fff;
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, .05);
+
+                    .trailer_btn_txt {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .film-info {
+            // display: flex;
+            // flex-direction: column;
+            padding-left: 20px;
+
+            .film-info-item {
+                display: flex;
+                flex-direction: row;
+                line-height: 20px;
+
+                .info-title {
+                    min-width: 130px;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                .link {
+                    color: #00a0b0;
+                    text-decoration: underline;
+                    font-size: 14px;
+                    white-space: pre-wrap;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+
+                .person-info {
+                    display: inline-block;
+                    white-space: pre-wrap;
+                    border-bottom: 1px dotted #006e79;
+                    color: #006e79;
+                    font-size: 14px;
+                    transition: .2s color linear;
+                    cursor: pointer;
+
+                    &:hover {
+                        border-bottom: none;
+                        color: #fff;
+                    }
+                }
+
+                &:last-child {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .film-desc {
+        padding-top: 10px;
+
+        h2 {
+            line-height: 22px;
+            font-weight: normal;
+            margin: 0px;
+        }
+
+        p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .5);
+            line-height: 22px;
+            padding: 5px 0px 15px;
+        }
+    }
+}

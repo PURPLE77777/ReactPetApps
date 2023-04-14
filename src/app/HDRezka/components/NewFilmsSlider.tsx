@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../scss/newFilmsSlider.scss';
 import { Film } from './interfaces';
 import lastFilms from '../dataset/last_films.json';
+import { Link } from 'react-router-dom';
 
 export default function NewFilmsSlider() {
 	const [selectedChapter, setSelectedChapter] = useState<HTMLSpanElement | null>(null);
@@ -111,7 +112,8 @@ export default function NewFilmsSlider() {
 
 	const createSliderFilmCard = (film: Film) => {
 		return (
-			<a
+			<Link
+				to={`filmProfile/${film.id}`}
 				className='film-card'
 				style={{ width: sliderConfig.imgWidth + 8 }}
 				key={`film-${film.id}`}>
@@ -132,7 +134,7 @@ export default function NewFilmsSlider() {
 						{film.country[0] + ', ' + film.genre[0]}
 					</p>
 				</div>
-			</a>
+			</Link>
 		);
 	};
 

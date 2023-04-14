@@ -12,7 +12,7 @@ export default function HDRezkaMain() {
 		<div id='hdrezka-container'>
 			<Header />
 			{
-				pathname.includes('/receipts/') ? <Outlet /> : <Main />
+				pathname.slice(8).length ? <Outlet /> : <Main />
 			}
 			<Footer />
 		</div>

@@ -10,6 +10,9 @@ export interface Film {
 	quality: string;
 	translaters: string[];
 	age: number;
+	duration: number;
+	description: string;
+	actors: string[];
 }
 
 export interface Episode {

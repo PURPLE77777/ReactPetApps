@@ -4,6 +4,7 @@ import lastFilms from '../dataset/last_films.json';
 import lastEpisodes from '../dataset/last_series.json';
 import { Episode, Film } from './interfaces';
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { months } from '../../common/utils/months';
 
 export default function NewFilmsReceipts() {
 	const [films, setFilms] = useState<Film[]>([]);
@@ -47,7 +48,8 @@ export default function NewFilmsReceipts() {
 
 	const createFilmCard = (film: Film) => {
 		return (
-			<a
+			<Link
+				to={`filmProfile/${film.id}`}
 				className={isPageSelected ? 'film-card margin-left-6' : 'film-card'}
 				style={{ width: cardConfig.imgWidth + 8 }}
 				key={`film-${film.id}`}>
@@ -68,26 +70,12 @@ export default function NewFilmsReceipts() {
 						{film.country[0] + ', ' + film.genre[0]}
 					</p>
 				</div>
-			</a>
+			</Link>
 		);
 	};
 
 	const createDayBlock = (time: number) => {
 		const getDateString = () => {
-			const months = [
-				'января',
-				'февраля',
-				'марта',
-				'апреля',
-				'мая',
-				'июня',
-				'июля',
-				'августа',
-				'сентября',
-				'октября',
-				'ноября',
-				'декабря'
-			];
 			const tm = new Date(time);
 			const timeString = `${tm.getDate()} ${months[tm.getMonth()]} ${tm.getFullYear()}`;
 			const dateString: string =

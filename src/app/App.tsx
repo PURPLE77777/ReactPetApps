@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HDRezkaMain from './HDRezka/components/HDRezkaMain';
 import ErrorPage from './common/components/ErrorPage';
 import NewFilmsReceipts from './HDRezka/components/NewFilmsReceipts';
+import FilmProfile from './HDRezka/components/FilmProfile';
 
 const router = createBrowserRouter([
 	{
@@ -15,12 +16,20 @@ const router = createBrowserRouter([
 	{
 		path: 'hdrezka',
 		element: <HDRezkaMain />,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: 'receipts/:page',
 				element: <NewFilmsReceipts />,
 				loader: ({ params }) => {
 					return params.page;
+				}
+			},
+			{
+				path: 'filmProfile/:filmId',
+				element: <FilmProfile />,
+				loader: ({ params }) => {
+					return params.filmId;
 				}
 			}
 		]
